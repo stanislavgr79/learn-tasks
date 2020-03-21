@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Page"
+          mode="edit"
+          helpPath="https://www.adobe.com/go/aem_cmp_page_v1"
+          extraClientlibs="[cq.common.wcm, core.wcm.components.page.v1.editor, cq.wcm.msm.properties, granite.contexthub.configuration, cq.siteadmin.admin.properties]"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          trackingFeature="core-components:page:v1">
+    <content
+            jcr:primaryType="nt:unstructured"
+            granite:class="cq-dialog-content-page"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs jcr:primaryType="nt:unstructured"
+                  size="L"
+                  granite:class="cq-siteadmin-admin-properties-tabs"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <socialmedia jcr:primaryType="nt:unstructured"
+                                 cq:showOnCreate="{Boolean}true"
+                                 jcr:title="Social Media"
+                                 sling:orderBefore="cloudservices"
+                                 sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section jcr:primaryType="nt:unstructured"
+                                             jcr:title="Social media sharing"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <inputgroup
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                    text="Enable user sharing for"/>
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <facebook
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq:showOnCreate="{Boolean}true"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            renderReadOnly="{Boolean}true"
+                                                            text="Facebook"
+                                                            value="facebook"
+                                                            name="./socialMedia">
+                                                        <granite:data jcr:primaryType="nt:unstructured"
+                                                                      cq-msm-lockable="socialMedia"/>
+                                                    </facebook>
+                                                    <pinterest
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq:showOnCreate="{Boolean}true"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            renderReadOnly="{Boolean}true"
+                                                            text="Pinterest"
+                                                            value="pinterest"
+                                                            name="./socialMedia">
+                                                        <granite:data jcr:primaryType="nt:unstructured"
+                                                                      cq-msm-lockable="socialMedia"/>
+                                                    </pinterest>
+                                                </items>
+                                            </field>
+                                            <variantpath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    sling:resourceType="cq/experience-fragments/editor/components/xffield"
+                                                    fieldDescription="Choose the social media variation of experience fragment to be used for generating page meta data for social media."
+                                                    fieldLabel="Preferred XF variation"
+                                                    filter="folderOrVariant"
+                                                    renderReadOnly="{Boolean}true"
+                                                    translateOptions="{Boolean}true"
+                                                    varioant="sm"
+                                                    name="./variantPath">
+                                                <granite:data jcr:primaryType="nt:unstructured"
+                                                              cq-msm-lockable="fragmentPath"/>
+                                            </variantpath>
+                                            <socialmedia_type
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulEdit="{Boolean}true"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    ignoreData="{Boolean}true"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    value="String[]"
+                                                    name="./socialMedia@TypeHint"/>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </socialmedia>
+
+                    <pathtomove jcr:primaryType="nt:unstructured"
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:title="Workflow task"
+                                sling:orderBefore="cloudservices"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section jcr:primaryType="nt:unstructured"
+                                             jcr:title="Workflow task section"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <inputgroup
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                    text="Enable pathToMove"/>
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <pathtomove
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq:showOnCreate="{Boolean}true"
+                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            fieldDescription="Choose the pathToMove for generating page."
+                                                            fieldLabel="Preferred pathToMove"
+                                                            renderReadOnly="{Boolean}true"
+                                                            translateOptions="{Boolean}true"
+                                                            name="./pathToMove"/>
+                                                </items>
+                                            </field>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </pathtomove>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

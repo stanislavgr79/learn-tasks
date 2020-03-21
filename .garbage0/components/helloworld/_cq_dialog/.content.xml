@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Hero Text"
+          helppath="en/cq/current/wcm/default_components.html#Carousel"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <headingText jcr:primaryType="nt:unstructured"
+                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                         fieldLabel="Heading Text"
+                                         name="./jcr:Heading"/>
+                            <description jcr:primaryType="nt:unstructured"
+                                         sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                         fieldLabel="Description"
+                                         name="./jcr:description"/>
+                            <taskPriority jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                                          text="Dropdown"
+                                          name="./jcr:drop"
+                                          id="jcr:drop">
+                                    <datasource jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/learn/components/datasource/searchtest/import.html "/>
+                            </taskPriority>
+                        </items>
+                    </columns>
+                </items>
+    </content>
+</jcr:root>

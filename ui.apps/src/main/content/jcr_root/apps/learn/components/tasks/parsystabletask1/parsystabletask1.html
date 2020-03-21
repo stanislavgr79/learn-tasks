@@ -1,0 +1,25 @@
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.model="com.epam.aem.core.tasks.task1.models.ParsysTableComponent"
+        data-sly-use.info="parsys.js"
+        data-sly-use.templates="templates.html"
+        data-sly-test.hasContent="${model.isHasContent}"
+        class="cmp-model"
+>
+    <sly data-sly-call="${clientlib.css @ categories='learn.components.parsystabletask1'}"/>
+
+    <div id="table" class="cmp-model__table" data-mod="${info}" rowattr="${info.row}" columnattr="${info.column}">
+        <div id="grid" class="wrapper" style="${model.style @ context='styleString'}">
+            <div data-sly-list.table="${model.table}" data-sly-unwrap>
+                <div data-sly-list.item="${table}" data-sly-unwrap>
+                    <div>
+                        <sly data-sly-resource="${ @path=item, resourceType='wcm/foundation/components/parsys'}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <sly data-sly-call="${clientlib.js @ categories='learn.components.parsystabletask1'}"/>
+    </div>
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>

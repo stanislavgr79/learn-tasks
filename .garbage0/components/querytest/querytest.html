@@ -1,0 +1,10 @@
+<sly data-sly-use.model="com.epam.aem.core.models.QueryTestModel">
+    <p data-sly-test="${model.searchText}">searchText: ${model.searchText}</p>
+    <p data-sly-test="${model.searchPath}">searchPath: ${model.searchPath}</p>
+    <p data-sly-test="${model.queryStr}">queryStr: ${model.queryStr}</p>
+    <p data-sly-test="${model.typeOfSearch}">typeOfSearch: ${model.typeOfSearch}</p>
+    <ul data-sly-test="${model.resultList}" data-sly-repeat="${model.resultList}">
+        <li><a href="http://localhost:4502/crx/de/index.jsp#${item}">${item}</a></li>
+    </ul>
+    <h3 data-sly-test="${!model.queryStr}">bad sql</h3>
+</sly>

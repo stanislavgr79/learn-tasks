@@ -1,0 +1,4 @@
+<sly data-sly-template.action="${@ action}"
+     data-sly-test="${action.linkTo}" data-sly-test="${action.label}" data-sly-test="${action.typeOfOpen}">
+    <a class="cmp-model__action-link" href="${action.linkTo @ extension = 'html'}" target="${action.typeOfOpen}">${action.label}</a>
+</sly>

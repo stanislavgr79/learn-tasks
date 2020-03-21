@@ -1,0 +1,29 @@
+<!-- /*
+
+
+*/ -->
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.topnav="com.epam.aem.core.tasks.task3.Breadcrumb" class="container learn--breadcrumb"
+>
+    <nav class="navbar navbar-inverse breadcrumb-absolute-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="${topnav.rootPage.path}.html"><strong class="text-primary">${topnav.rootPage.title}</strong></a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li data-sly-repeat="${topnav.pageWithTitle}" >
+                <a data-sly-test="${!topnav.pageWithTitle[item].lastPage}" href="${topnav.pageWithTitle[item].current.path @ extension = 'html'}" >
+                    ${topnav.pageWithTitle[item].findTitle}
+                </a>
+                <a data-sly-test="${topnav.pageWithTitle[item].lastPage}">
+                    ${topnav.pageWithTitle[item].findTitle}
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <sly data-sly-call="${clientLib.css @ categories=['learn.components.breadcrumbtask3']}"></sly>
+</sly>
+

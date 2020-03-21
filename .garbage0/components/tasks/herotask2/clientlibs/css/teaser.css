@@ -1,0 +1,27 @@
+
+.cmp-model__content {
+    column-width: auto;
+    column-count: 2;
+    column-gap: initial;
+	column-rule-color: #D71C3B;
+    column-rule-style: outset;
+    }
+
+        .cmp-model__action-link {
+			color: red;
+   		}
+        .cmp-model__plaintext {
+        break-before: column;
+			color: green;
+   		 }
+
+        .cmp-model__richtext {
+			color: blue;
+    	}
+
+.cmp-teaser__image {
+	display: block;
+  	width: 100%;
+
+
+	}

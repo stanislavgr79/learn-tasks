@@ -1,0 +1,13 @@
+:root {
+     --my-rowjs: 1;
+     --my-columnjs: 1;
+     --main-bg-color: brown;
+       }
+
+  #grid {
+         display: grid;
+         grid-template-columns: repeat(var(--my-columnjs), 1fr);
+         grid-template-rows: repeat(var(--my-rowjs), 1fr);
+         background-color: var(--main-bg-color);
+	     text-align: center;
+         }

@@ -1,0 +1,26 @@
+<!-- /*
+ */-->
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.navbar="com.epam.aem.core.tasks.task3.NavBar" class="container learn--top-navbar"
+>
+    <nav class="navbar navbar-inverse navbar-absolute-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="${navbar.rootPage.path}.html"><strong>${navbar.rootPage.title}</strong></a>
+        </div>
+
+        <div class="collapse navbar-collapse width">
+            <ul class="nav navbar-nav navbar-center">
+
+                <li class="nav navbar-nav navbar-left" data-sly-repeat="${navbar.items}">
+                    <a href="${item.path}.html">${item.title}</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <sly data-sly-call="${clientLib.css @ categories=['learn.components.navbar3']}"></sly>
+
+</sly>
