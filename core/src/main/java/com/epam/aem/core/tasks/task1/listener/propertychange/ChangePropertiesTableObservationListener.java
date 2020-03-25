@@ -30,7 +30,7 @@ import java.util.Objects;
 )
 public class ChangePropertiesTableObservationListener implements EventListener {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "testSystemUser";
+    private static final String SERVICE_USER_NAME = "systemuser";
 
     @Reference
     JobManager jobManager;

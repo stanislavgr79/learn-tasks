@@ -1,0 +1,73 @@
+ #table-viewer-single {
+      	align: center;
+        margin: auto;
+        width: 90%;
+        border-collapse: collapse;
+        border-spacing: 4px 3px;
+      }
+
+	  #caption-col-single {
+			text-align:center;
+            color: red;
+      }
+
+      #th-col-single {
+        text-align: center;
+        border: 1px solid #333; /* Граница вокруг ячеек */
+        padding: 1px;
+        background-color: #A7C942;
+        color: #fff;
+      }
+
+	  #td-col-single, #description-viewer-single{
+        text-align: center;
+        border: 1px solid #333; /* Граница вокруг ячеек */
+        padding: 1px;
+		background-color: #EAF2D3;
+      }
+
+	#description-viewer-single {
+		text-align:left;
+    }
+
+    #td-col-single {
+		width: 25%;
+    }
+
+	#caption-single-nofound{
+		text-align: center;
+        border: 1px solid #333; /* Граница вокруг ячеек */
+        padding: 1px;
+        background-color: #A7C942;
+        color: #fff;
+	}
+
+.td-col{
+ 		text-align: center;
+        border: 1px solid #333; /* Граница вокруг ячеек */
+        padding: 1px;
+		background-color: #EAF2D3;
+}
+
+
+#td-col-all-title{
+	width: 10%;
+}
+
+
+#td-col-all-eventStartDate{
+width: 200px;
+}
+
+#td-col-all-description{
+width: auto;
+text-align: left;
+}
+
+#td-col-all-place{
+width: 10%;
+}
+
+#td-col-all-topic{
+width: 60px;
+}

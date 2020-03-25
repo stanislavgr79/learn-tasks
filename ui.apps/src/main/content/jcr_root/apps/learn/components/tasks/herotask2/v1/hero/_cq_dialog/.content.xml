@@ -3,9 +3,8 @@
           xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Teaser"
-          helpPath="https://www.adobe.com/go/aem_cmp_teaser_v1"
-          extraClientlibs="[core.wcm.components.teaser.v1.editor]"
+          jcr:title="Hero"
+          extraClientlibs="[learn.aem.components.hero.v1.editor]"
           sling:resourceType="cq/gui/components/authoring/dialog"
           trackingFeature="core-components:teaser:v1">
     <content

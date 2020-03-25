@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2019 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Events viewer"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[learn.components.eventsviewer.v1.editor]"
+    trackingFeature="core-components:embed:v1">
+    <content
+        granite:class="cmp-embed__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <type
+                                                granite:class="cmp-event-viewer-dialog-edit__type"
+                                                granite:hide="${(cqDesign.singleEventViewerDisabled &amp;&amp; cqDesign.allEventsViewerDisabled)}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                deleteHint="{Boolean}true"
+                                                fieldLabel="Type"
+                                                name="./searchType"
+                                                vertical="{Boolean}false">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-embed-dialog-edit-hook="typeField"
+                                                    cmp-embed-dialog-edit-showhidetarget="\[data-cmp-embed-dialog-edit-type\]"/>
+
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <singleEventViewer
+                                                        granite:hide="${cqDesign.singleEventViewerDisabled}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        checked="{Boolean}true"
+                                                        text="SingleEventViewer"
+                                                        value="singleEventViewer"/>
+                                                    <allEventsViewer
+                                                        granite:hide="${cqDesign.allEventsViewerDisabled}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="AllEventsViewer"
+                                                        value="allEventsViewer"/>
+                                                </items>
+                                            </type>
+
+                                            <singleEventViewer
+                                                granite:class="foundation-toggleable"
+                                                granite:hide="${cqDesign.singleEventViewerDisabled}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+
+                                                    <settingsGroup1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <nameEvent
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    name="./searchEvent"
+                                                                    fieldDescription="Description: title"
+                                                                    fieldLabel="Title Name event for search"
+                                                                    value="title"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                                        </items>
+
+                                                    </settingsGroup1>
+
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-embed-dialog-edit-type="true"
+                                                    cmp-embed-dialog-edit-showhidetargetvalue="singleEventViewer"/>
+                                            </singleEventViewer>
+
+                                            <allEventsViewer
+                                                    granite:class="foundation-toggleable"
+                                                    granite:hide="${cqDesign.allEventsViewerDisabled}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+
+                                                    <settingsGroup2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+
+                                                            <select
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                    fieldLabel="ColumnNameForSorting"
+                                                                    fieldDescription="Description: title, etc"
+                                                                    name="./columnNameForSorting">
+                                                                <datasource jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="/apps/learn/components/datasource/task5/typeofsort.html "/>
+                                                            </select>
+
+                                                            <paginationElements
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    name="./paginationElements"
+                                                                    fieldDescription="Description: Pagination number"
+                                                                    fieldLabel="Pagination number"
+                                                                    defaultValue="5"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/numberfield"/>
+                                                        </items>
+                                                    </settingsGroup2>
+
+                                                </items>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cmp-embed-dialog-edit-type="true"
+                                                        cmp-embed-dialog-edit-showhidetargetvalue="allEventsViewer"/>
+                                            </allEventsViewer>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

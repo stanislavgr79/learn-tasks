@@ -1,0 +1,48 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+ data-sly-test.hasContent="${model.title || model.description || model.eventStartDate || model.place || model.topic}"
+ <sly data-sly-call="${clientLib.css @ categories=['learn.aem.components.event.v1.design']}"></sly>
+
+data-sly-use.obj1="" data-sly-use.obj2=""
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<sly data-sly-use.selectSearch="select.js" data-sly-unwrap></sly>
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.templates="templates.html"
+        data-sly-use.model="com.epam.aem.core.tasks.task5.models.EventViewer"
+        data-sly-test.hasContent="${properties.searchType}"
+>
+
+    <div class="event-Form" id="eventForm" method-event="GET" path-eventForm=${resource.path} search-type="${properties.searchType}" >
+
+        <p>${hasContent}</p>
+
+        <sly class="event-single-viewer" data-sly-test="${selectSearch.single}">
+            <div id="single-event" search-value="${properties.searchEvent}">
+            </div>
+        </sly>
+
+
+        <sly class="event-all-viewer" data-sly-test="${selectSearch.all}">
+
+            <div id="all-events">
+
+            </div>
+
+        </sly>
+
+
+
+    </div>
+
+</sly>
+
+<div id="no-content"></div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['learn.components.eventsviewer.v1.viewer']}"></sly>
+<sly data-sly-call="${clientLib.js @ categories=['learn.components.eventsviewer.v1.viewer']}"></sly>

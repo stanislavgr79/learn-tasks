@@ -29,7 +29,7 @@ import java.util.*;
 @Designate(ocd = JobChangeTableByPropertyObservationListenerConfig.class)
 public class JobChangeTableByPropertyObservationListener implements JobConsumer {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "testSystemUser";
+    private static final String SERVICE_USER_NAME = "systemuser";
     private boolean activateTopic;
 
     @Activate

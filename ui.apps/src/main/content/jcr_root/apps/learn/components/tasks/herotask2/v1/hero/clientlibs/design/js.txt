@@ -16,4 +16,4 @@
 
 #base=js
 
-teaser.js
+hero.js

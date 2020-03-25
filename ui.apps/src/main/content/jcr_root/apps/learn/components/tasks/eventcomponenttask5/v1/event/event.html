@@ -1,0 +1,39 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.templates="templates.html"
+        data-sly-use.model="com.epam.aem.core.tasks.task5.models.EventComponent"
+        data-sly-test.hasContent="${model.title || model.description || model.eventStartDate || model.place || model.topic}"
+>
+
+    <div >
+
+        <table>
+            <caption>Event: ${model.title}</caption>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Place</th>
+                <th scope="col">Topic</th>
+            </tr>
+            <tr>
+                <td class="col1">${model.title}</td><td class="col1">${'dd-MM-yyyy HH:mm' @ format=model.eventStartDate}</td><td class="col1">${model.place}</td><td class="col1">${model.topic}</td>
+            </tr>
+            <tr>
+                <td class="description" colspan="4">Description: ${model.description}</td>
+            </tr>
+        </table>
+
+    </div>
+
+</sly>
+
+</sly>
+
+<sly data-sly-call="${clientLib.css @ categories=['learn.aem.components.event.v1.design']}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Event"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs jcr:primaryType="nt:unstructured"
+                  maximized="{Boolean}true"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <general jcr:primaryType="nt:unstructured"
+                          jcr:title="General value"
+                          margin="{Boolean}true"
+                          sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <title
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Title"
+                                                    value="Title"
+                                                    name="./title"/>
+                                            <description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Description"
+                                                    value="Description"
+                                                    name="./description"/>
+                                            <place
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Place"
+                                                    value="Place"
+                                                    name="./place"/>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+
+                    <dateOfEvent jcr:primaryType="nt:unstructured"
+                          jcr:title="Select date"
+                          margin="{Boolean}true"
+                          sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <startDateOfEvent
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    fieldLabel="Event Start Date"
+                                                    name="./eventStartDate"
+                                                    displayTimezoneMessage="{Boolean}true"
+                                                    displayedFormat="DD MMMM, YYYY hh:mm a"
+                                                    renderReadOnly="{Boolean}true"
+                                                    type="datetime"
+                                                    required="{Boolean}true"/>
+                                        </items>
+                    </dateOfEvent>
+
+                    <typeOfTopic jcr:primaryType="nt:unstructured"
+                                 jcr:title="Select Topic"
+                                 margin="{Boolean}true"
+                                 sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="Type of search"
+                                                    name="./topic">
+                                                <datasource jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="/apps/learn/components/datasource/task5/typeoftopic.html "/>
+                                            </select>
+                                        </items>
+
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </typeOfTopic>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

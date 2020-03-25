@@ -1,0 +1,61 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+ data-sly-test.hasContent="${model.title || model.description || model.eventStartDate || model.place || model.topic}"
+ <sly data-sly-call="${clientLib.css @ categories=['learn.aem.components.event.v1.design']}"></sly>
+
+data-sly-use.obj1="" data-sly-use.obj2="" 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<sly data-sly-use.selectSearch="select.js" data-sly-unwrap></sly>
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.templates="templates.html"
+        data-sly-use.model="com.epam.aem.core.tasks.task5.models.EventViewer"
+>
+
+    <div class="event-Form" id="eventForm" method-event="GET" path-eventForm=${resource.path} path2=${resource.path} search-type="${properties.searchType}" data-sly-test=${properties.searchType}>
+
+        <p>columnNameForSorting - ${model.columnNameForSorting}</p>
+        <p>paginationElements - ${model.paginationElements}</p>
+
+        <sly class="single" id="sing" data-sly-test="${selectSearch.single}" src='124143'>
+
+            <div id="single-event" value='lhlkhlhlhl' data-event="122564247624727247624753">
+                <p>111111111111 ${value}</p>
+
+                <li class="qwerty" id="asdf" data-sly-repeat.el="">
+                    <a>${el.name}</a>
+                </li>
+
+
+            </div>
+
+
+            <div id="resultat"></div>
+
+            <div id="msglist" data-user="bob" data-list-size="5" data-maxage="180"></div>
+        </sly>
+
+
+
+
+        <sly data-sly-test="${selectSearch.all}">
+
+            <div id="all-events">
+                <p>22222222222<p>
+            </div>
+
+        </sly>
+
+        <div id="result2"></div>
+
+    </div>
+
+</sly>
+
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['learn.components.eventsviewer.v1.viewer']}"></sly>
+<sly data-sly-call="${clientLib.js @ categories=['learn.components.eventsviewer.v1.viewer']}"></sly>

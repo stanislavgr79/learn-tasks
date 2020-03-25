@@ -91,7 +91,7 @@ $(function() {
 
                 $.each(response, function(key, value){
 
-                   output +="<a href=" + value + " class='list-group-item list-group-item-action border-1'>" + value + "</a>";
+                   output +="<a href=" + value + " class='list-group-item list-group-item-action border-1'>" + key + "</a>";
 
                 });
 
