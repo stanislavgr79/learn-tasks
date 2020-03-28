@@ -21,22 +21,22 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
 
-                                    <singleEventViewerDisabled
+                                    <singleDisabled
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="false"
                                         fieldDescription="When checked, disables the singleEventViewer."
-                                        name="./singleEventViewerDisabled"
+                                        name="./singleDisabled"
                                         text="Disable singleEventViewer"
                                         uncheckedValue="false"
                                         value="{Boolean}true"/>
 
-                                    <allEventsViewerDisabled
+                                    <allDisabled
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="false"
                                         fieldDescription="When checked, disables the ability of allEventsViewer."
-                                        name="./allEventsViewerDisabled"
+                                        name="./allDisabled"
                                         text="Disable AllEventsViewer"
                                         uncheckedValue="false"
                                         value="{Boolean}true"/>

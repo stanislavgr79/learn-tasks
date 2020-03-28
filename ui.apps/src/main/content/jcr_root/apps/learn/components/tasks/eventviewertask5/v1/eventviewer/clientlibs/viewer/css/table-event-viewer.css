@@ -1,4 +1,4 @@
- #table-viewer-single {
+ #table-viewer-single, #table-viewer-all {
       	align: center;
         margin: auto;
         width: 90%;
@@ -9,6 +9,9 @@
 	  #caption-col-single {
 			text-align:center;
             color: red;
+         	border: 1px; /* Граница вокруг ячеек */
+        	padding: 1px;
+    		font-size:  1.0;
       }
 
       #th-col-single {
@@ -17,6 +20,8 @@
         padding: 1px;
         background-color: #A7C942;
         color: #fff;
+        line-height: 1.0;
+		height: 8px;
       }
 
 	  #td-col-single, #description-viewer-single{
@@ -24,6 +29,8 @@
         border: 1px solid #333; /* Граница вокруг ячеек */
         padding: 1px;
 		background-color: #EAF2D3;
+        line-height: 1.0;
+		height: 8px;
       }
 
 	#description-viewer-single {
@@ -70,4 +77,22 @@ width: 10%;
 
 #td-col-all-topic{
 width: 60px;
+}
+
+.btn {
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.12s ease-in-out 0s, color 0.12s ease-in-out 0s;
+}
+
+
+.pagination-tb-events {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+
 }

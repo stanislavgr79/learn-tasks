@@ -1,11 +1,6 @@
 <!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
- data-sly-test.hasContent="${model.title || model.description || model.eventStartDate || model.place || model.topic}"
- <sly data-sly-call="${clientLib.css @ categories=['learn.aem.components.event.v1.design']}"></sly>
-
-data-sly-use.obj1="" data-sly-use.obj2=""
-
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 
 <sly data-sly-use.selectSearch="select.js" data-sly-unwrap></sly>
@@ -14,29 +9,30 @@ data-sly-use.obj1="" data-sly-use.obj2=""
         data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
         data-sly-use.templates="templates.html"
         data-sly-use.model="com.epam.aem.core.tasks.task5.models.EventViewer"
-        data-sly-test.hasContent="${properties.searchType}"
+        data-sly-test.hasContent="${properties.type}"
 >
 
-    <div class="event-Form" id="eventForm" method-event="GET" path-eventForm=${resource.path} search-type="${properties.searchType}" >
-
-        <p>${hasContent}</p>
+    <div class="event-Form" id="eventForm" method-event="GET" path-eventForm=${resource.path} search-type="${properties.type}" >
 
         <sly class="event-single-viewer" data-sly-test="${selectSearch.single}">
             <div id="single-event" search-value="${properties.searchEvent}">
             </div>
         </sly>
 
+        <sly class="event-all-viewer" id="event-all-viewer-id" data-sly-test="${selectSearch.all}">
 
-        <sly class="event-all-viewer" data-sly-test="${selectSearch.all}">
-
-            <div id="all-events">
-
+            <div id="all-events" data-tb-pagination="${properties.paginationElements}" data-tb-current-page="1">
             </div>
 
+            <div class='pagination-tb-events'>
+                <ul class="pagination pagination-sm ">
+                    <li class="tb-page-first"><button type="button" class="btn disabled btn-page-first" disabled="disabled">First page</button></li>
+                    <li class="tb-page-prev"><button type="button" class="btn disabled btn-page-prev" disabled="disabled">Back</button></li>
+                    <li class="tb-page-next"><button type="button" class="btn btn-page-next" >Next</button></li>
+                    <li class="tb-page-last"><button type="button" class="btn btn-page-last">Last Page</button></li>
+                </ul>
+            </div>
         </sly>
-
-
-
     </div>
 
 </sly>

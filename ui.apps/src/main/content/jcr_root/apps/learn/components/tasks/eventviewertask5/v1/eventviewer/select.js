@@ -1,17 +1,17 @@
 "use strict";
 
 use(function (){
-var type = properties["searchType"];
+var type = properties["type"];
 var text = properties["searchEvent"];
 
-if(type == 'singleEventViewer' && text != null){
+if(type == 'single' && text != null){
 
     return {
 	single: "true",
     all: "false"
 	};
 
-} else if (type == 'allEventsViewer'){
+} else if (type == 'all'){
 
     return {
 	single: "false",

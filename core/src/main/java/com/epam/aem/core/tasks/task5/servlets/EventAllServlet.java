@@ -18,6 +18,7 @@ import javax.jcr.RepositoryException;
 import javax.servlet.Servlet;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Component(service = Servlet.class,
         property = {
@@ -37,13 +38,17 @@ public class EventAllServlet extends SlingSafeMethodsServlet {
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response) throws IOException {
         final Resource resource = request.getResource();
         int paginationElements = Integer.parseInt(resource.getValueMap().get("paginationElements").toString());
-        String pathRequest = resource.getPath();
+        int currentTablePage = Integer.parseInt(request.getParameter("current_table_page"));
 
+        String pathRequest = resource.getPath();
+        int totalEvents = 0;
         String jsonResponse = "";
         if(paginationElements>=0){
             List<EventComponent> eventComponents = null;
             try {
-                eventComponents = eventService.getAllEvents(pathRequest);
+                Map<Integer, List<EventComponent>> map = eventService.getAllEvents(pathRequest, currentTablePage);
+                totalEvents = map.keySet().iterator().next();
+                eventComponents  = map.get(totalEvents);
             } catch (RepositoryException e) {
                 final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
                 logger.error(String.format("initialization: %s", e.getMessage()));
@@ -52,6 +57,7 @@ public class EventAllServlet extends SlingSafeMethodsServlet {
         }
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.addIntHeader("totalEvents", totalEvents);
         response.getWriter().write(jsonResponse);
     }
 }

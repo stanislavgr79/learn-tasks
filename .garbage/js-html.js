@@ -242,3 +242,45 @@ function myFun3() {
 
 	return obj3;
 }
+
+
+$(function() {
+    $('.tb-page-first').submit(function(e) {
+        console.log('submit tb-page-first');
+        e.preventDefault(); //STOP default action
+		$("#all-events").data("tb-current-page", 1);
+
+    });
+})
+
+$(function() {
+    $('.tb-page-last').submit(function(e) {
+        console.log('submit tb-page-last');
+        e.preventDefault(); //STOP default action
+
+		var tb_total_events = $("#all-events").data("total-event-count");
+        var tb_events_pageSize = $("#all-events").data("tb-pagination");
+        tb_events_lastPage = tb_total_events / tb_events_pageSize;
+
+		$("#all-events").data("tb-current-page", Math.ceil(tb_events_lastPage));
+
+    });
+})
+
+
+$(function() {
+    $('.tb-page-prev').submit(function(e) {
+        console.log('submit tb-page-prev');
+        e.preventDefault(); //STOP default action
+		$("#all-events").data("tb-current-page", $("#all-events").data("tb-current-page")-1);
+
+    });
+})
+
+$(function() {
+    $('.tb-page-next').submit(function(e) {
+        console.log('submit tb-page-prev');
+        e.preventDefault(); //STOP default action
+        $("#all-events").data("tb-current-page", $("#all-events").data("tb-current-page")+1);
+    });
+})

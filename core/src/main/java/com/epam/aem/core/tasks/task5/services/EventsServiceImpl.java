@@ -1,6 +1,7 @@
 package com.epam.aem.core.tasks.task5.services;
 
 import com.epam.aem.core.tasks.task5.models.EventComponent;
+import com.google.common.collect.ImmutableMap;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
@@ -79,24 +80,30 @@ public class EventsServiceImpl implements EventService {
     }
 
     @Override
-    public List<EventComponent> getAllEvents(String pathRequest) throws RepositoryException {
+    public Map<Integer, List<EventComponent>> getAllEvents(String pathRequest, int currentTablePage) throws RepositoryException {
         buildSession();
         initializationAll(pathRequest);
         List<EventComponent> listComponents = new ArrayList<>();
         NodeIterator nodeIterator = nodeAdminPage.getNodes();
-        while (nodeIterator.hasNext()) {
+        int selectFrom = currentTablePage * pageSize - pageSize;
+        int count = 1;
+        while (nodeIterator.hasNext() && count <= selectFrom+pageSize) {
             Node node = nodeIterator.nextNode();
-            EventComponent component = new EventComponent(
-                    node.getProperty("title").getString(),
-                    node.getProperty("description").getString(),
-                    node.getProperty("eventStartDate").getDate().getTime(),
-                    node.getProperty("place").getString(),
-                    node.getProperty("topic").getString()
-
-            );
-            listComponents.add(component);
+            if(count > selectFrom){
+                EventComponent component = new EventComponent(
+                        node.getProperty("title").getString(),
+                        node.getProperty("description").getString(),
+                        node.getProperty("eventStartDate").getDate().getTime(),
+                        node.getProperty("place").getString(),
+                        node.getProperty("topic").getString()
+                );
+                listComponents.add(component);
+            }
+            count++;
         }
-        return returnSortedByTypeOfSorting(listComponents, sortOrderByColumnName);
+        return new ImmutableMap.Builder<Integer, List<EventComponent>>()
+                .put((int)nodeIterator.getSize(), returnSortedByTypeOfSorting(listComponents, sortOrderByColumnName))
+                .build();
     }
 
     private List<EventComponent> returnSortedByTypeOfSorting(List<EventComponent> listComponents, String typeOfSorting){

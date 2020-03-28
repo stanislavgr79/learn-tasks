@@ -1,4 +1,4 @@
- table {
+  table {
       	align: center;
         margin: auto;
         width: 90%;
@@ -9,7 +9,8 @@
 	  caption {
 			text-align:center;
             color: red;
-      }
+    		border: 1px;
+     	 }
 
       th{
         text-align: center;
@@ -32,4 +33,16 @@
 
     .col1 {
 		width: 25%;
+    }
+
+	th, td{
+    line-height: 1.0;
+
+	height: 8px;
+	}
+
+    caption{
+        border: 1px; /* Граница вокруг ячеек */
+        padding: 1px;
+    font-size:  1.0;
     }
