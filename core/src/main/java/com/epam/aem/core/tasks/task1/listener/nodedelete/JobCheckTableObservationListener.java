@@ -29,7 +29,7 @@ import java.util.Objects;
 @Designate(ocd = JobCheckTableObservationListenerConfig.class)
 public class JobCheckTableObservationListener implements JobConsumer {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "systemuser";
+    private static final String SERVICE_USER_NAME = "system_user";
     private boolean activateTopic;
 
     @Activate

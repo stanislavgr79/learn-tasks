@@ -17,7 +17,7 @@ import java.util.Map;
 @Component(immediate = true, service = QuickSearchSelector.class)
 public class QuickSearchSelector {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "systemuser";
+    private static final String SERVICE_USER_NAME = "system_user";
 
     private SearchService searchService;
     private Session session;

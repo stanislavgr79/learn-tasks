@@ -122,7 +122,7 @@ function getAllEventsViewer(){
 
 				changeCssVisibleButton();
 
-            } else {
+               } else {
 			   console.log('No any Event in admin-page');
 	 		   output +="<table id='table-viewer-single'>";
                output +="<caption id='caption-single-nofound'> No any Event in admin-page </caption>";

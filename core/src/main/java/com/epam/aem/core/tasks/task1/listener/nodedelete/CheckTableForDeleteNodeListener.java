@@ -31,7 +31,7 @@ import java.util.Objects;
 )
 public class CheckTableForDeleteNodeListener implements EventListener {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "systemuser";
+    private static final String SERVICE_USER_NAME = "system_user";
 
     @Reference
     JobManager jobManager;

@@ -1,5 +1,6 @@
 package com.epam.aem.core.tasks.task1.listener.nodedelete;
 
+
 import org.apache.jackrabbit.api.observation.JackrabbitEvent;
 import org.apache.jackrabbit.oak.commons.PathUtils;
 import org.apache.sling.api.resource.Resource;

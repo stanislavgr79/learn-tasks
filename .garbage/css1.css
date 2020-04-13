@@ -1,0 +1,67 @@
+.table-event-div:nth-child(n+4){
+	     display: none;
+	}
+
+	.open{
+	    cursor: pointer;
+	    font-weight: bold;
+	    margin: 0 8px;
+	 }
+
+	 .active{
+	     color:  #FFFFFF;
+	     background-color: #A9A9A9;
+	  }
+
+
+.disable{
+   cursor: not-allowed;
+   pointer-events: none;
+}
+
+Them you can add any decoration to that button. For change the status you can use jquery
+
+$("#id").toggleClass('disable');
+
+
+.container .navbar .nav > .active > a,
+.container .navbar .nav > .active > a:hover,
+.container .navbar .nav > .active > a:focus {
+    background: #fdb813;
+    color: #333333;
+    text-shadow: none;
+}
+
+    background-size: 700px auto;
+
+    style="top:150px; position: fixed; left:0; right:0;"
+
+
+    ======================
+
+    .separator_component hr {
+        border-top: 2px solid #ffffff;
+        border-bottom: none;
+    }
+
+    hr {
+        margin: 20px 0;
+        border: 0;
+    }
+
+user agent
+    hr {
+        display: block;
+        unicode-bidi: isolate;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+        overflow: hidden;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    <div class="separator_component">
+           <hr>
+    <div>

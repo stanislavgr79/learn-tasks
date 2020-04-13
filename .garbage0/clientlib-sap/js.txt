@@ -1,0 +1,9 @@
+#base=js
+bootstrap.js
+bootstrap.min.js
+respond.min.js
+respond.src.js
+
+// Javascript or Typescript
+import "./**/*.js";
+import "./**/*.ts";

@@ -1,0 +1,63 @@
+@media (min-width: 768px) {
+
+    .main-toc h2 {
+        font-size: 48px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .recent-news {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .widgets .widget {
+        margin-left: 20px;
+        float: right;
+    }
+}
+
+@media (min-width: 980px) {
+    .navbar .container {
+        width: 940px;
+    }
+    .nav-list {
+        width: 218px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar .container {
+        width: 1160px;
+    }
+
+    .nav-list {
+        width: 250px;
+    }
+}
+
+@media (max-width: 979px) {
+    .navbar-fixed-top {
+        margin-bottom: 0;
+    }
+    .navbar .pull-right {
+        float: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .get-started {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .navbar-fixed-top .cover {
+        display: none;
+    }
+    .nav-list.affix {
+        position: static;
+    }
+}
+@media (max-width: 480px) {
+
+}

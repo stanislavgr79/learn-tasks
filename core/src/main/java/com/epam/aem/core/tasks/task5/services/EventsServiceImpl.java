@@ -28,7 +28,7 @@ import java.util.*;
 @Designate(ocd = EventsServiceImpl.EventsServiceConfig.class)
 public class EventsServiceImpl implements EventService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    private static final String SERVICE_USER_NAME = "systemuser";
+    private static final String SERVICE_USER_NAME = "system_user";
     private static final String PATH_ADMIN_PAGE_NODE = "/content/we-retail/admin-page/jcr:content/root/responsivegrid";
 
     @ObjectClassDefinition

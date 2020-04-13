@@ -1,0 +1,10 @@
+
+<checkbox
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+        fieldDescription="Button with link below Intro Description"
+        name="./isButtonNeed"
+        value="true"
+        uncheckedValue="false"
+        text="Is Button need?">
+</checkbox>

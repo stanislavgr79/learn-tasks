@@ -1,0 +1,42 @@
+.event-listing {
+    padding: 20px 0 40px;
+}
+.event-listing h3 i {
+    color: #fdb813;
+}
+.event-listing ul li {
+    margin: 0;
+    padding: 5px 0 20px;
+}
+.event-listing ul i {
+    font-size: 14px;
+}
+.event-listing ul p,
+.event-listing ul h4,
+.event-listing ul .date {
+    text-indent: 0;
+}
+.event-listing ul .date {
+    margin-left: -3px;
+}
+.event-listing ul h4 {
+    margin: 0 0 5px 0;
+}
+.event-listing ul h4 a {
+    color: #333333;
+    display: block;
+}
+.event-listing ul h4 a:hover,
+.event-listing ul h4 a:active,
+.event-listing ul h4 a:focus {
+    color: #0076cb;
+}
+.event-listing ul p {
+    font-size: 12px;
+    line-height: 13.6px;
+    margin: 0 0 5px;
+}
+.event-listing ul.unstyled .date {
+    margin-left: 0;
+}
+

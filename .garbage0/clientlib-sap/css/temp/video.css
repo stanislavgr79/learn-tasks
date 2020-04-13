@@ -1,0 +1,37 @@
+.video {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.widgets {
+    *zoom: 1;
+    margin-bottom: 40px;
+}
+.widgets:before,
+.widgets:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.widgets:after {
+    clear: both;
+}
+.widgets .widget {
+    margin-bottom: 10px;
+}
+
